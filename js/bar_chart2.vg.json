@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Top 10 Items (2015-2021)",
+    "data": {
+      "values": [
+        {"Item": "String and cord (diameter less than 1cm)", "Count": 2.86},
+        {"Item": "Shopping Bags  incl. pieces", "Count": 4.33},
+        {"Item": "Polystyrene pieces 2.5 cm > < 50 cm", "Count": 5.3},
+        {"Item": "Plastic pieces 2.5 > < 50 cm", "Count": 9.98},
+        {"Item": "Plastic caps/lids drinks", "Count": 4.31},
+        {"Item": "Glass or ceramic fragments > 2.5 cm", "Count": 3.02},
+        {"Item": "Food containers incl. fast food containers", "Count": 2.24},
+        {"Item": "Crisps packets/sweets wrappers", "Count": 2.99},
+        {"Item": "Cotton bud sticks", "Count": 3.39},
+        {"Item": "Cigarette butts and filters", "Count": 23.45}
+      ]
+    },
+
+    "width":700,
+    "height": {"step": 15},
+    "mark": {
+      "type":"bar", 
+      "tooltip": {
+        "content": "encoding"}
+      },
+    "encoding": {
+      "y": {"field": "Item", "type": "nominal",
+      "sort": "-x"},
+  
+      "x": {
+        "field": "Count",
+        "type": "quantitative",
+        "title": "% of total count"
+      }
+    }
+  
+  }

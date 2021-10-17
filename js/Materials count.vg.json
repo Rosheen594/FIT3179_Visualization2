@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/Rosheen594/Marine-Litter/main/data/MLW_Meta.csv"},
+    "width":800,
+    "height": {"step": 50},
+    "mark": {"type":"bar","tooltip": {"content": "encoding"}},
+    "encoding": {
+      "y": {
+        "field": "category",
+        "title":"Materials",  
+        "type": "nominal",
+        "sort": "-x"
+      },
+      
+      "x": {
+        "aggregate": "count",
+        "field":"generalname",
+        "title": "All found items"
+      }
+      
+    }
+  }

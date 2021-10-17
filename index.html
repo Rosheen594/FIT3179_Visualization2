@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="js/vega_lite_vis.js"></script>
+    
+
+
+</head>
+
+<body>
+    <div class="pure-g">
+        <h1>Marine Litter Watch: Litter on the beach</h1>
+        <div class="pure-u-1">
+            <img src="image/image.jpeg" />
+        </div>
+
+
+        <div class="pure-u-1-3">
+                <h2>Map of Events</h2>
+                <p>This interactive map shows the beaches and the litter collection events organised by the Marine LitterWatch communities.</p>
+                <p>Through this map, we can see that the vast majority of beach cleaning activity is focused on Europe.</p>
+                <p>That's because there’s a European APP that encourages people to voluntarily clean up or monitor beach litter.</p>
+                <p>At the bottom of the map, you can try zooming in and out to see all the activity from 2015 to 2021.</p>
+                <p>(When clicking on a beach, the data of each event will be shown)</p>
+                <div id='map'></div>
+        </div>
+
+
+        <div class="pure-u-1-3">
+            <h3>Community Activity</h3>
+            <p>This graph shows the activity of each community by number of events carried out each year.</p>
+            <p>We can see from this graph that in 2020, the total number of community activities is the lowest of all years. </p>
+            <p>We can speculate that this is the cause of the COVID-19, people have reduced their beach cleaning activities. </p>
+            <p>(When clicking on the graph, the data of event will be shown)</p>
+            <div id="stacked_bars"></div>
+        </div>
+
+        <div class="pure-u-1-3">
+            <h2>Overview of Results</h2>
+            <p>The following two graphs are the overview of the distribution of collected litter items by material and the top 10 items.</p>
+            <p>We can find that among all the categories, plastic accounts for the most.</p>
+            <p>(When clicking on the graph, the data of event will be shown)</p>
+            <div id="bar_chart"></div>>
+            <p>Among all the items, cigarette butts and filters account for the most.</p>
+            <p>If we can, we should use less plastic, cut back on cigarettes and filters.</p>
+            <p>(When clicking on the graph, the data of event will be shown)</p>
+            <div id="bar chart2"></div>
+        </div>
+
+        <div class="pure-u-1-3">
+            
+            <div id="bar_chart2"></div>
+        </div>
+
+
+        
+</body>
+
+</html>
