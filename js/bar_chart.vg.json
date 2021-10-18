@@ -1,47 +1,35 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "The distribution of materials (2015-2021)",
-    "data": {
-      "values": [
-        {"Materials": "Plastic", "Time": 89},
-        {"Materials": "Metal", "Time": 21},
-        {"Materials": "Cloth/textile", "Time": 11},
-        {"Materials": "Processed/worked wood", "Time": 11},
-        {"Materials": "Paper/Cardboard", "Time": 10},
-        {"Materials": "Rubber", "Time": 11},
-        {"Materials": "Glass/ceramics", "Time": 10},
-        {"Materials": "Chemicals", "Time": 1}
-      ]
-    },
-    "transform": [{
-      "window": [{
-        "op": "sum",
-        "field": "Time",
-        "as": "TotalTime"
-      }],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "The distribution of materials (2015-2021)",
+  "data": {
+    "values": [
+      {"Materials": "Plastic", "count": 89},
+      {"Materials": "Metal", "count": 21},
+      {"Materials": "Cloth/textile", "count": 11},
+      {"Materials": "Processed/worked wood", "count": 11},
+      {"Materials": "Paper/Cardboard", "count": 10},
+      {"Materials": "Rubber", "count": 11},
+      {"Materials": "Glass/ceramics", "count": 10},
+      {"Materials": "Chemicals", "count": 1}
+    ]
+  },
+  "transform": [
+    {
+      "window": [{"op": "sum", "field": "count", "as": "Totalcount"}],
       "frame": [null, null]
     },
-    {
-      "calculate": "datum.Time/datum.TotalTime * 100",
-      "as": "PercentOfTotal"
-    }],
-    "width":690,
-    "height": {"step": 20},
-    "mark": {
-      "type":"bar", 
-      "tooltip": {
-        "content": "encoding"}
-      },
-    "encoding": {
-      "y": {"field": "Materials", "type": "nominal", "sort": "-x"},
-  
-      "x": {
-        "field": "PercentOfTotal",
-        "type": "quantitative",
-        "format": ".2f",
-        "title": "% of total count"
-      }
+    {"calculate": "datum.count/datum.Totalcount * 100", "as": "PercentOfTotal"}
+  ],
+  "width": 760,
+  "height": {"step": 20},
+  "mark": {"type": "bar", "tooltip": {"content": "encoding"}},
+  "encoding": {
+    "y": {"field": "Materials", "type": "nominal", "sort": "-x"},
+    "x": {
+      "field": "PercentOfTotal",
+      "type": "quantitative",
+      "format": ".2f",
+      "title": "% of total count"
     }
-  
   }
-  
+}
