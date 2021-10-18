@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "The distribution of materials (2015-2021)",
+    "data": {
+      "values": [
+        {"Materials": "Plastic", "Time": 89},
+        {"Materials": "Metal", "Time": 21},
+        {"Materials": "Cloth/textile", "Time": 11},
+        {"Materials": "Processed/worked wood", "Time": 11},
+        {"Materials": "Paper/Cardboard", "Time": 10},
+        {"Materials": "Rubber", "Time": 11},
+        {"Materials": "Glass/ceramics", "Time": 10},
+        {"Materials": "Chemicals", "Time": 1}
+      ]
+    },
+    "transform": [{
+      "window": [{
+        "op": "sum",
+        "field": "Time",
+        "as": "TotalTime"
+      }],
+      "frame": [null, null]
+    },
+    {
+      "calculate": "datum.Time/datum.TotalTime * 100",
+      "as": "PercentOfTotal"
+    }],
+    "width":690,
+    "height": {"step": 20},
+    "mark": {
+      "type":"bar", 
+      "tooltip": {
+        "content": "encoding"}
+      },
+    "encoding": {
+      "y": {"field": "Materials", "type": "nominal", "sort": "-x"},
+  
+      "x": {
+        "field": "PercentOfTotal",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "% of total count"
+      }
+    }
+  
+  }
+  
