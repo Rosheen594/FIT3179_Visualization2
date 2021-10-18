@@ -39,7 +39,7 @@
         "field": "PercentOfTotal",
         "type": "quantitative",
         "format": ".2f",
-        "title": "% of total Time"
+        "title": "% of total count"
       }
     }
   
